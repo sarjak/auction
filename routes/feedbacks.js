@@ -49,4 +49,6 @@ router.post('/postfeedback', function(req,res,next){
 		});
 	}
 });
-	
+
+
+module.exports = router;
