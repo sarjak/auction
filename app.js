@@ -4,8 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-/*
+
 var routes = require('./routes/index');
+/*
 var users = require('./routes/users');
 var channels = require('./routes/channels');
 var documents=require('./routes/documents');
@@ -43,9 +44,9 @@ app.use(function(req, res, next) {
   res.header("Content-Type","application/json");  
   next();
 });
-/*
+
 app.use('/', routes);
-app.use('/users', users);
+/*app.use('/users', users);
 app.use('/channels', channels);
 app.use('/company',companies);
 app.use('/categories',categories);
