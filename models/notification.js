@@ -13,12 +13,12 @@ var Schema = mongoose.Schema;
 var notificationSchema = new Schema({
 
 	// id of the user
-	user_id: {type:Schema.Types.ObjectId,ref:"UserSchema", required:true, unique:false};
+	user_id: {type:Schema.Types.ObjectId,ref:"UserSchema", required:true, unique:false},
 
 	// id of the comment
-	comment_id: {type:Schema.Types.ObjectId,ref:"CommentSchema", required:true, unique:false};
+	comment_id: {type:Schema.Types.ObjectId,ref:"CommentSchema", required:true, unique:false}
 
 });
 
 // Export notification Schema
-modules.exports=mongoose.model("NotificationSchema",notificationSchema);
+module.exports=mongoose.model("NotificationSchema",notificationSchema);

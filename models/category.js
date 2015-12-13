@@ -6,12 +6,12 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var userSchema = new Schema({
+var categorySchema = new Schema({
 
 	//Name of the category
-	cat_name: {type:String, required:true, unique:false};
+	cat_name: {type:String, required:true, unique:false}
 
 });
 
 // Export category Schema
-modules.exports=mongoose.model("CategorySchema",categorySchema);
+module.exports=mongoose.model("CategorySchema",categorySchema);

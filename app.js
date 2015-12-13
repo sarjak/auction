@@ -6,23 +6,17 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-/*
 var users = require('./routes/users');
-var channels = require('./routes/channels');
-var documents=require('./routes/documents');
-var subscription=require('./routes/subscriptions');
-var companies = require('./routes/companies');
-var categories = require('./routes/categories');
 var comments = require('./routes/comments');
-var coupons = require('./routes/coupons');
-var likes = require('./routes/likes');
-var feedbacks = require('./routes/feedbacks');*/
+var feedbacks = require('./routes/feedbacks');
+var bids = require('./routes/bids');
+var posts = require('./routes/posts');
 
 // Connection to mongodb
 var mongoose = require('mongoose');
 // var dburi="mongodb://test:test@ds041404.mongolab.com:41404/test_discount";
-/*var dburi = "mongodb://backend:backend@ds045054.mongolab.com:45054/bidbucks_dev";
-var db=mongoose.connect(dburi);*/
+var dburi = "mongodb://sarjak29:s9157574040@ds027345.mongolab.com:27345/auction_it";
+var db=mongoose.connect(dburi);
 
 var app = express();
 
@@ -46,17 +40,11 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', routes);
-/*app.use('/users', users);
-app.use('/channels', channels);
-app.use('/company',companies);
-app.use('/categories',categories);
+app.use('/users', users);
 app.use('/comments',comments);
-app.use('/documents', documents);
 app.use('/feedbacks', feedbacks);
-app.use('/subscriptions',subscription);
-app.use('/coupons',coupons);
-app.use('/likes',likes);
-*/
+app.use('/bids',bids);
+app.use('/posts',posts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

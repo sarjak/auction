@@ -11,12 +11,12 @@ var Schema = mongoose.Schema;
 var subcategorySchema = new Schema({
 
 	//Name of the subcategory
-	subcat_name: {type:String, required:true, unique:false};
+	subcat_name: {type:String, required:true, unique:false},
 
 	//id of the category
-	category_id: {type:Schema.Types.ObjectId,ref:"CategorySchema", required:true, unique:false};
+	category_id: {type:Schema.Types.ObjectId,ref:"CategorySchema", required:true, unique:false}
 
 });
 
 // Export subcategory Schema
-modules.exports=mongoose.model("SubcategorySchema",subcategorySchema);
+module.exports=mongoose.model("SubcategorySchema",subcategorySchema);

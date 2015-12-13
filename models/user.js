@@ -9,33 +9,33 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
 
 	// FName of the user
-	user_fname: {type:String, required:true, unique:false};
+	user_name: {type:String, required:true, unique:false},
 
 	// LName of the user
-	user_fname: {type:String, required:true, unique:false};
+	username: {type:String, required:true, unique:true},
 
 	// emailid of the user
-	user_emailid: {type:String, required:true, unique:true};
+	user_emailid: {type:String, required:true, unique:true},
 
 	// password of the user
-	user_pwd: {type:String, required:true, unique:false};
+	user_pwd: {type:String, required:true, unique:false},
 
 	// contact of the user
-	user_contact: {type:Integer, required:true, unique:false};
+	user_contact: {type:Number, required:true, unique:false},
 
 	// city of the user
-	user_city: {type:String, required:true, unique:false};
+	user_city: {type:String, required:true, unique:false},
 
 	// state of the user
-	user_state: {type:String, required:true, unique:false};
+	user_state: {type:String, required:true, unique:false},
 
 	// country of the user
-	user_country: {type:String, required:true, unique:false};
+	user_country: {type:String, required:true, unique:false},
 
 	// URL of the image of the user
-	image_URL: {type:String};
+	image_URL: {type:String}
 
 });
 
 // Export User Schema
-modules.exports=mongoose.model("UserSchema",userSchema);
+module.exports=mongoose.model("UserSchema",userSchema);

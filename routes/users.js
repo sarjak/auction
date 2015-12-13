@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var userSchema = require('../models/users');
+var userSchema = require('../models/user');
 var nodemailer = require('nodemailer');
 
 
@@ -10,7 +10,7 @@ var multer  = require('multer');
 var crypto = require('crypto');
 var mime = require('mime');
 
-/*
+
 var storage = multer.diskStorage({
   destination: './uploads/profile_pictures', 
   filename: function (req, file, cb) {
@@ -22,7 +22,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
-
+/*
 // For Email
 
 var smtpTransport = require('nodemailer-smtp-transport');
@@ -150,7 +150,7 @@ router.post('/login',function(req, res, next) {
 	var password = req.body.password;
 	var email = req.body.email;
 	// Find User with username
-	userSchema.findOne({ $or : [{'username' : username} , {'email':email}]}, function(err,user){
+	userSchema.findOne({ $or : [{'username' : username} , {'user_emailid':email}]}, function(err,user){
 		if(err) {
 			console.log(err);
 			response_object = { status: 2, message: "Something went wrong" };
@@ -159,7 +159,7 @@ router.post('/login',function(req, res, next) {
 		}	
 		else {
 			if(user) {
-				if(user.password == password) {
+				if(user.user_pwd == password) {
 					if(user.activated) {
 						response_object = user;
 						console.log(user);
@@ -214,8 +214,10 @@ router.post('/register',  upload.single('profile_pic'), function(req,res,next) {
 			if(err) {
 				console.log(err);
 				res.json(err);
-			} else {
-				var mailOptions = {
+			} else 
+			{
+				res.json(user);
+		/*		var mailOptions = {
 				  from: 'startauction@yahoo.com', // sender address
 				  to: user.email, // list of receivers
 				  bcc: 'gandhi.sarjak@gmail.com',
@@ -234,7 +236,9 @@ router.post('/register',  upload.single('profile_pic'), function(req,res,next) {
 					}
 					console.log('Message sent: ' + info);
 				});	// res.send(info);
-			}
+			
+			*/
+		}
 		});	
 	}
 });
