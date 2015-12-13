@@ -15,9 +15,6 @@ var bidSchema = new Schema({
 	// id of the user
 	user_id: {type:Schema.Types.ObjectId,ref:"UserSchema", required:true, unique:false};
 
-	// id of the post
-	post_id: {type:Schema.Types.ObjectId,ref:"PostSchema", required:true, unique:false};
-	
 	// date of bid
 	bid_date: {type:Date, requireD:true, unique:false};
 
