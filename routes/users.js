@@ -29,8 +29,8 @@ var smtpTransport = require('nodemailer-smtp-transport');
 var transporter = nodemailer.createTransport({
     service: 'Yahoo',
     auth: {
-        user: 'rajudandwani@yahoo.com',
-        pass: '9228720977'
+        user: 'startauction@yahoo.com',
+        pass: '9157574040'
     }
 });
 */
@@ -85,7 +85,7 @@ router.get('/sendpassword/:email',function(req,res,next){
 			console.log(user.fname);
 			console.log(user.email);
 			var mailOptions = {
-			  from: 'rajudandwani@yahoo.com', // sender address
+			  from: 'startauction@yahoo.com', // sender address
 			  to: user.email, // list of receivers
 			  bcc: 'gandhi.sarjak@gmail.com',
 			  subject: 'Password reset Bidbucks !', // Subject line
@@ -216,7 +216,7 @@ router.post('/register',  upload.single('profile_pic'), function(req,res,next) {
 				res.json(err);
 			} else {
 				var mailOptions = {
-				  from: 'rajudandwani@yahoo.com', // sender address
+				  from: 'startauction@yahoo.com', // sender address
 				  to: user.email, // list of receivers
 				  bcc: 'gandhi.sarjak@gmail.com',
 				  subject: 'Welcome to Bidbucks !', // Subject line
