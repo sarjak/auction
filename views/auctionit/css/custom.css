@@ -1,0 +1,32 @@
+.login-register {
+	font-family: sans-serif;
+	font-weight: bold;
+	padding: 15px;
+	text-align: right;
+	font-size: 13px;
+}
+
+.search{
+	font-family: sans-serif;
+	padding: 10px;
+	font-size: 10px;
+}
+
+.btnsearch{
+	height: 34px;
+	background-color: silver;
+}
+
+.look-for{
+	font-size: 23px;
+	font-family: bookman-old-style;
+}
+
+.sidemenu{
+	
+	
+}
+
+img{
+	height: 20px;
+}
