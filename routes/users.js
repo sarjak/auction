@@ -22,7 +22,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
-/*
+
 // For Email
 
 var smtpTransport = require('nodemailer-smtp-transport');
@@ -33,7 +33,7 @@ var transporter = nodemailer.createTransport({
         pass: '9157574040'
     }
 });
-*/
+
 /*
 var smtpTransport = require('nodemailer-smtp-transport');
 var transporter = nodemailer.createTransport(smtpTransport({
@@ -76,24 +76,24 @@ router.get('/',function(req,res,next){
 
 router.get('/sendpassword/:email',function(req,res,next){
 	var response_object;
-	userSchema.findOne({ 'email' : req.params.email }, function(err, user){
+	userSchema.findOne({ 'user_emailid' : req.params.email }, function(err, user){
 		if(err){
 			console.log(err);
 			res.json(err);
 		}
 		else{
-			console.log(user.fname);
-			console.log(user.email);
+			//console.log(user.fname);
+			console.log(user.user_emailid);
 			var mailOptions = {
 			  from: 'startauction@yahoo.com', // sender address
-			  to: user.email, // list of receivers
+			  to: user.user_emailid, // list of receivers
 			  bcc: 'gandhi.sarjak@gmail.com',
 			  subject: 'Password reset Bidbucks !', // Subject line
-			  html: '<b>Hello '+user.fname+' '+user.lname+',</b><br/><p> Your Password is : '+user.password+'</p>' // html body
+			  html: '<b>Hello '+user.user_name+',</b><br/><p> Your Password is : '+user.pwd+'</p>' // html body
 			};		
 			console.log("Started sending mail");
-			console.log(user.fname);
-			console.log(user.email);
+//			console.log(user.fname);
+//			console.log(user.email);
 			transporter.sendMail(mailOptions, function(error, info){
 				console.log("Send Mail completed");
 				if(error){
@@ -160,14 +160,8 @@ router.post('/login',function(req, res, next) {
 		else {
 			if(user) {
 				if(user.user_pwd == password) {
-					if(user.activated) {
-						response_object = user;
-						console.log(user);
-						res.json(response_object);
-					} else {
-						response_object = {status: 3, message: "User is not active"};
-						res.json(response_object);
-					}	
+					response_object = {status: 1,message: "Login Successfull"};
+					res.json(response_object);
 				} else {
 					response_object = {status: 4,message: "Password is incorrect"};
 					res.json(response_object);
