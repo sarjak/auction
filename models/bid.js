@@ -16,7 +16,7 @@ var bidSchema = new Schema({
 	user_id: {type:Schema.Types.ObjectId,ref:"UserSchema", required:true, unique:false},
 
 	// date of bid
-	bid_date: {type:Date, requireD:true, unique:false},
+	bid_date: {type:Date, required:true, default:Date.now() },
 
 	//proce of bid
 	bid_price: {type:Number, required:true, unique:false}
