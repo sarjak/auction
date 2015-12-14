@@ -23,7 +23,7 @@
 }
 
 img{
-	height: 20px;
+	height: px;
 }
 
 .sidemenu{
@@ -32,26 +32,26 @@ img{
 }
 
 .cus-badge{
-	margin-left: 5%;
-	padding: 5%;
+	
+	padding: 2%;
 
 }
 
 .badge{
 	font-size: 15px;
-	width: 90%;
+	width: 100%;
 	background-color: orange;
-	margin-bottom: 5%;
+	margin-bottom: 2%;
+	height: auto;
 }
 
 .btn-bid{
-	margin-left: 10%;
-	width: 80%;
+	
+	width: 100%;
 }
 
 .cus-nav{
 	margin-top: 10px;
-
 }
 
 body{
@@ -66,4 +66,9 @@ body{
 
 .btn-title1{
 	padding-top: 5px;
+}
+
+.thumbnail > img{
+	height: 30%;
+	width: 100%;
 }
