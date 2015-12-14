@@ -15,9 +15,6 @@ var feedbackSchema = new Schema({
 	// id of the user
 	user_id: {type:Schema.Types.ObjectId,ref:"UserSchema", required:true, unique:false},
 
-	// id of the post
-	post_id: {type:Schema.Types.ObjectId,ref:"PostSchema", required:true, unique:false},
-
 	// date of the feedback
 	feedback_date: {type:Date, required:true, unique:false},
 
