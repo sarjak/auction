@@ -16,7 +16,7 @@ var feedbackSchema = new Schema({
 	user_id: {type:Schema.Types.ObjectId,ref:"UserSchema", required:true, unique:false},
 
 	// date of the feedback
-	feedback_date: {type:Date, required:true, unique:false},
+	feedback_date: {type:Date, required:true,  default:Date.now() },
 
 	// description of the feedback
 	feedback_description: {type:String, required:true, unique:false},

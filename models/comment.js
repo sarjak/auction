@@ -19,7 +19,7 @@ var commentSchema = new Schema({
 	post_id: {type:Schema.Types.ObjectId,ref:"PostSchema", required:true, unique:false},
 
 	// date of the comment
-	comment_date: {type:Date, required:true, unique:false},
+	comment_date: {type:Date, required:true,  default:Date.now() },
 
 	// description of the comment
 	comment_description: {type:String, required:true, unique:false}

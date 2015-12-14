@@ -19,7 +19,7 @@ var postSchema = new Schema({
 	user_buyerid: {type:Schema.Types.ObjectId,ref:"UserSchema", required:true, unique:false},
 
 	// date of the post
-	post_date: {type:Date, required:true, unique:false},
+	post_date: {type:Date, required:true,  default:Date.now() },
 
 	// end date of the post
 	post_enddate: {type:Date, requireD:true, unique:false},
