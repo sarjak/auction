@@ -22,11 +22,48 @@
 	font-family: bookman-old-style;
 }
 
-.sidemenu{
-	
-	
-}
-
 img{
 	height: 20px;
+}
+
+.sidemenu{
+	background-color: #F0F0F0;
+
+}
+
+.cus-badge{
+	margin-left: 5%;
+	padding: 5%;
+
+}
+
+.badge{
+	font-size: 15px;
+	width: 90%;
+	background-color: orange;
+	margin-bottom: 5%;
+}
+
+.btn-bid{
+	margin-left: 10%;
+	width: 80%;
+}
+
+.cus-nav{
+	margin-top: 10px;
+
+}
+
+body{
+	background-color: #F8F8F8;
+}
+
+.btn-title{
+	font-size: 15px;
+	padding: 10px;
+	width: 100%;
+}
+
+.btn-title1{
+	padding-top: 5px;
 }
