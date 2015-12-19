@@ -9,8 +9,8 @@ var nodemailer = require('nodemailer');
 // Paramaters: post_id
 // Returns: Object containing list of all the users in the database
 
-router.get('/post/:post_id',function(req,res,next){
-	bidSchema.find({post_id:req.p.post_id}, function(err, bid){
+router.get('/:post_id',function(req,res,next){
+	bidSchema.find({post_id:req.params.post_id}, function(err, bid){
 		if(err){
 			console.log(err);
 			res.json(err);
@@ -27,9 +27,9 @@ router.get('/post/:post_id',function(req,res,next){
 // Parameters: No parameters
 // Returns: User object if found in the database, else error.
 
-router.get('/post/bid/:bid_id', function(req,res,next){
+router.get('/bid/:bid_id', function(req,res,next){
 	
-	userSchema.find({ _id : req.params.bid_id }, function(err, bid){
+	bidSchema.find({ _id : req.params.bid_id }, function(err, bid){
 		if(err){
 			console.log(err);
 			res.json(err);
@@ -46,7 +46,7 @@ router.get('/post/bid/:bid_id', function(req,res,next){
 // Parameters: bid details
 // Returs: status and message
 
-router.post('/post/bid',function(req,res,next) {
+router.post('/add',function(req,res,next) {
 	
 	var response_object;
 	// Create new user Object
@@ -63,7 +63,7 @@ router.post('/post/bid',function(req,res,next) {
 				console.log(err);
 				res.json(err);
 			} else {
-					console.log("Success");
+					res.json(bid);
 			}
 		});	
 	}
@@ -75,7 +75,7 @@ router.post('/post/bid',function(req,res,next) {
 // Parameters: bid_id
 // Returns: "Successfully Deleted" message, else error message.
 
-router.delete('/post/deletebid/:bid_id',function(req,res,next){
+router.delete('/delete/:bid_id',function(req,res,next){
 
 	var response_obj;
 	bidSchema.remove({'_id':req.params.bid_id},function(err,result){
@@ -95,7 +95,7 @@ router.delete('/post/deletebid/:bid_id',function(req,res,next){
 // Parameters: Attributes of bid.
 // Returns: Status and Message
 
-router.post('/post/editbid/:bid_id', function(req, res, next){
+router.post('/edit/:bid_id', function(req, res, next){
 	var response_obj;
 
 	var query = bidSchema.where( {_id : req.params.bid_id} );
