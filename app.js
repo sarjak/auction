@@ -11,6 +11,8 @@ var comments = require('./routes/comments');
 var feedbacks = require('./routes/feedbacks');
 var bids = require('./routes/bids');
 var posts = require('./routes/posts');
+var cats = require('./routes/categorys');
+var subcats = require('./routes/subcategorys');
 
 // Connection to mongodb
 var mongoose = require('mongoose');
