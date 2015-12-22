@@ -31,7 +31,7 @@ router.get('/',function(req,res,next){
 // Parameters:subcategoryid
 // Returns: subcategory Object.
 
-router.post('/:subcategoryid', function(req, res, next){
+router.get('/:subcategoryid', function(req, res, next){
 	
 	subcategorySchema.find({ _id : req.params.subcategoryid }, function(err, subcategory){
 		if(err){
@@ -44,6 +44,25 @@ router.post('/:subcategoryid', function(req, res, next){
 	});
 });
 
+
+// Controller: get subcatgories of particular category
+// URL: http://www.domain.com/subcategorys/category/<categoryid>
+// Method: POST
+// Parameters:subcategoryid
+// Returns: subcategories.
+
+router.get('/category/:categoryid', function(req, res, next){
+	
+	subcategorySchema.find({ category_id : req.params.categoryid }, function(err, subcategory){
+		if(err){
+			console.log(err);
+			res.json(err);
+		}
+		else{
+			res.json(subcategory);
+		}
+	});
+});
 
 // Controller: Add subcategory
 // URL: http://www.domain.com/subcategorys/add

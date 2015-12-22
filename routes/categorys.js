@@ -7,7 +7,7 @@ var router = express.Router();
 var categorySchema = require('../models/category');
 
 // Controller: List all category
-// URL: http://www.domain.com/category
+// URL: http://www.domain.com/categorys
 // Method: GET
 // Paramaters: No parameters
 // Returns: Object containing list of all the category in the database
@@ -31,7 +31,7 @@ router.get('/',function(req,res,next){
 // Parameters:categoryid
 // Returns: category Object.
 
-router.post('/:categoryid', function(req, res, next){
+router.get('/:categoryid', function(req, res, next){
 	
 	categorySchema.find({ _id : req.params.categoryid }, function(err, category){
 		if(err){
@@ -53,7 +53,6 @@ router.post('/:categoryid', function(req, res, next){
 
 router.post('/add', function(req,res,next) {
 	
-	var response_object;
 	// Create new category Object
 	var parameters = req.body;
 

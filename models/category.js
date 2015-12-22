@@ -9,7 +9,10 @@ var Schema = mongoose.Schema;
 var categorySchema = new Schema({
 
 	//Name of the category
-	cat_name: {type:String, required:true, unique:false}
+	cat_name: {type:String, required:true, unique:false},
+
+	//date
+	date:{type:Date,default:Date.now()}
 
 });
 

@@ -47,6 +47,8 @@ app.use('/comments',comments);
 app.use('/feedbacks', feedbacks);
 app.use('/bids',bids);
 app.use('/posts',posts);
+app.use('/categorys',cats);
+app.use('/subcategorys',subcats);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
